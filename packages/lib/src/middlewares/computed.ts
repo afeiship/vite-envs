@@ -4,7 +4,7 @@
 export default (create, compute) => (set, get, api) => {
   const setWithComputed = (update, replace) => {
     set((state) => {
-      const updated = typeof update === 'function' ? update(state) : update;
+      const updated = typeof update === 'function' ? update({ ...state }) : update;
       const computedState = compute({ ...state, ...updated });
       return { ...updated, ...computedState };
     }, replace);
