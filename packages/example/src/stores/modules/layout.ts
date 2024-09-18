@@ -8,6 +8,7 @@ export default nx.$defineStore({
   actions: {
     toggle: (state) => {
       state.collapsed = !state.collapsed;
+      // return state;
     },
   },
   watch: {
